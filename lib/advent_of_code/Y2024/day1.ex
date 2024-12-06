@@ -11,7 +11,8 @@ defmodule AdventOfCode.Y2024.Day1 do
     end)
     |> Enum.unzip
 
-    IO.puts(find_distance(list1, list2))
+    IO.puts("Distance between both lists: #{find_distance(list1, list2)}")
+    IO.puts("Score of both lists: #{similarity_score(list1, list2)}")
   end
 
   def find_distance(list1, list2) do
@@ -22,4 +23,15 @@ defmodule AdventOfCode.Y2024.Day1 do
     |> Enum.map(fn {x, y} -> abs(x - y) end)
     |> Enum.sum
   end
+
+  def similarity_score(list1, list2) do
+    frequencies = Enum.frequencies(list2)
+    result = Enum.map(list1, fn num ->
+      num * Map.get(frequencies, num, 0)
+    end)
+    |> Enum.sum
+
+    result
+  end
+
 end
