@@ -1,21 +1,26 @@
 # AdventOfCode
 
-**TODO: Add description**
+My solutions for [Advent of Code](https://adventofcode.com/).
 
-## Installation
+## Setup
+Pre-requisite: setup elixir.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `advent_of_code` to your list of dependencies in `mix.exs`:
+```
+mix deps.get
 
-```elixir
-def deps do
-  [
-    {:advent_of_code, "~> 0.1.0"}
-  ]
-end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/advent_of_code>.
+Running the tests
+
+```
+mix test
+
+```
+
+And to run the solutions for a specific day:
+
+```
+mix advent_of_code.solve 2024 Day1
+
+```
 
